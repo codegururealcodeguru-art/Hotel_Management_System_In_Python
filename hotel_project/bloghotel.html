@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hotel Management System in Python</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f3f4f6;
+    color:#333;
+}
+header{
+    background:#0f172a;
+    color:#fff;
+    padding:15px 30px;
+    font-size:20px;
+    font-weight:bold;
+}
+.container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    gap:25px;
+    padding:30px;
+}
+.main{
+    flex:3;
+    background:#fff;
+    padding:30px;
+}
+.sidebar{
+    flex:1;
+    background:#fff;
+    padding:20px;
+    height:fit-content;
+}
+h1{font-size:30px;}
+h2{margin-top:40px;color:#0f172a;}
+h3{margin-top:25px;}
+p{line-height:1.8;}
+ul,ol{margin-left:25px;}
+pre{
+    background:#f1f5f9;
+    padding:12px;
+    border-left:4px solid #0f172a;
+    font-size:14px;
+    overflow-x:auto;
+}
+hr{margin:35px 0;}
+.sidebar ul{list-style:none;padding:0;}
+.sidebar ul li{padding:8px 0;border-bottom:1px solid #ddd;}
+.btn{
+    display:inline-block;
+    background:#0f172a;
+    color:#fff;
+    padding:10px 15px;
+    text-decoration:none;
+    margin-top:10px;
+}
+.output-box{
+    margin-top:30px;
+    text-align:center;
+}
+.output-box img{
+    max-width:100%;
+    border:1px solid #ddd;
+    padding:10px;
+    background:#fafafa;
+}
+.output-caption{
+    margin-top:10px;
+    font-size:15px;
+    color:#555;
+}
+footer{
+    background:#0f172a;
+    color:#fff;
+    text-align:center;
+    padding:15px;
+    font-size:14px;
+}
+/* ---------- IMPROVED LOOK ---------- */
+.main h1{
+    border-bottom:3px solid #0f172a;
+    padding-bottom:10px;
+}
+
+h2{
+    border-left:5px solid #0f172a;
+    padding-left:12px;
+}
+
+a{
+    color:#0f172a;
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+}
+
+/* ---------- DARK CODE BLOCK (CodeWithCurious Style) ---------- */
+pre{
+    background:#0d1117;
+    color:#c9d1d9;
+    padding:18px;
+    border-radius:6px;
+    border-left:6px solid #2563eb;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* Python-like colouring */
+.code-keyword{ color:#ff7b72; }
+.code-string{ color:#a5d6ff; }
+.code-comment{ color:#8b949e; }
+.code-func{ color:#d2a8ff; }
+.code-class{ color:#ffa657; }
+
+/* Buttons hover */
+.btn:hover{
+    background:#2563eb;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    Python Mini Projects
+</header>
+
+<div class="container">
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<h1 id="top">Hotel Management System in Python (Tkinter)</h1>
+<p><strong>Category:</strong> Python GUI Mini Project</p>
+
+<hr>
+
+<h2>Table of Contents</h2>
+<ol>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#objectives">Key Objectives</a></li>
+    <li><a href="#tech">Technologies Used</a></li>
+    <li><a href="#steps">Steps to Create</a></li>
+    <li><a href="#code">Code Explanation</a></li>
+    <li><a href="#output">Output</a></li>
+    <li><a href="#download">Download & PDF</a></li>
+</ol>
+
+<hr>
+
+<h2 id="intro">Introduction</h2>
+<p>
+The Hotel Management System is a simple, interactive GUI-based desktop application developed
+using Python’s Tkinter library. It assists in managing hotel guest check-ins and check-outs
+using a clean and user-friendly interface.
+</p>
+
+<p>
+This project demonstrates how graphical user interfaces can simplify hotel operations
+without the need for databases or web applications.
+</p>
+
+<hr>
+
+<h2 id="objectives">Key Objectives</h2>
+<ul>
+    <li>Collect guest name, phone number, and room type</li>
+    <li>Maintain a temporary list of checked-in guests</li>
+    <li>Allow real-time check-in and check-out</li>
+    <li>Display current guests</li>
+    <li>Use message boxes for feedback</li>
+</ul>
+
+<hr>
+
+<h2 id="tech">Technologies Used</h2>
+<ul>
+    <li>Python 3</li>
+    <li>Tkinter (GUI Toolkit)</li>
+    <li>Lists and Dictionaries</li>
+</ul>
+
+<hr>
+
+<h2 id="steps">Steps to Create Hotel Management System</h2>
+
+<h3>Step 1: Setup Environment</h3>
+<p>Install Python and open any IDE like IDLE, VS Code, or PyCharm.</p>
+
+<h3>Step 2: Create Python File</h3>
+<pre>hotel_management.py</pre>
+
+<h3>Step 3: Import Modules</h3>
+<pre>
+import tkinter as tk
+from tkinter import messagebox
+</pre>
+
+<h3>Step 4: Define Class</h3>
+<pre>
+class HotelManagement:
+    def __init__(self, root):
+        pass
+</pre>
+
+<h3>Step 5: Input Fields</h3>
+<pre>
+self.name_var = tk.StringVar()
+self.phone_var = tk.StringVar()
+self.room_var = tk.StringVar()
+</pre>
+
+<h3>Step 6: Buttons</h3>
+<pre>
+tk.Button(root, text="Check-In", command=self.check_in)
+tk.Button(root, text="Show All Guests", command=self.show_guests)
+tk.Button(root, text="Check-Out", command=self.check_out)
+</pre>
+
+<h3>Step 7: Output Area</h3>
+<pre>
+self.output = tk.Text(root, height=12, width=60)
+</pre>
+
+<h3>Step 8: Run Application</h3>
+<pre>
+root = tk.Tk()
+app = HotelManagement(root)
+root.mainloop()
+</pre>
+
+<hr>
+
+<h2 id="code">Code Explanation</h2>
+
+<h3>Purpose of the App</h3>
+<p>
+The application simulates hotel check-in and check-out by storing guest data temporarily.
+</p>
+
+<h3>Guest Storage</h3>
+<pre>
+self.guests = []
+</pre>
+
+<h3>Check-In Method</h3>
+<pre>
+def check_in(self):
+    name = self.name_var.get()
+    phone = self.phone_var.get()
+    room = self.room_var.get()
+</pre>
+
+<h3>Show Guests</h3>
+<pre>
+def show_guests(self):
+    self.output.delete(1.0, tk.END)
+</pre>
+
+<h3>Check-Out</h3>
+<pre>
+def check_out(self):
+    name = self.name_var.get()
+</pre>
+
+<hr>
+<hr>
+
+<h2>Source Code</h2>
+<h2>Source Code</h2>
+
+<pre>
+<span class="code-keyword">import</span> tkinter <span class="code-keyword">as</span> tk
+<span class="code-keyword">from</span> tkinter <span class="code-keyword">import</span> messagebox
+
+<span class="code-keyword">class</span> <span class="code-class">HotelManagement</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self, root):
+        self.root = root
+        self.root.title(<span class="code-string">"Hotel Management System"</span>)
+        self.root.geometry(<span class="code-string">"500x600"</span>)
+        self.root.config(bg=<span class="code-string">"lightblue"</span>)
+
+        self.guests = []
+
+        tk.Label(root, text=<span class="code-string">"Hotel Check-In System"</span>,
+                 font=(<span class="code-string">"Arial"</span>, 18, <span class="code-string">"bold"</span>),
+                 bg=<span class="code-string">"skyblue"</span>).pack(pady=10)
+
+        self.name_var = tk.StringVar()
+        self.phone_var = tk.StringVar()
+        self.room_var = tk.StringVar()
+
+        tk.Label(root, text=<span class="code-string">"Guest Name:"</span>, bg=<span class="code-string">"lightblue"</span>).pack()
+        tk.Entry(root, textvariable=self.name_var).pack()
+
+        tk.Label(root, text=<span class="code-string">"Phone Number:"</span>, bg=<span class="code-string">"lightblue"</span>).pack()
+        tk.Entry(root, textvariable=self.phone_var).pack()
+
+        tk.Label(root, text=<span class="code-string">"Room Type:"</span>, bg=<span class="code-string">"lightblue"</span>).pack()
+        tk.OptionMenu(root, self.room_var,
+                      <span class="code-string">"Single"</span>,
+                      <span class="code-string">"Double"</span>,
+                      <span class="code-string">"Deluxe"</span>,
+                      <span class="code-string">"Suite"</span>).pack()
+
+        tk.Button(root, text=<span class="code-string">"Check-In"</span>,
+                  command=self.check_in,
+                  bg=<span class="code-string">"green"</span>, fg=<span class="code-string">"white"</span>).pack(pady=10)
+
+        self.output = tk.Text(root, height=12, width=60)
+        self.output.pack()
+
+    <span class="code-keyword">def</span> <span class="code-func">check_in</span>(self):
+        name = self.name_var.get()
+        phone = self.phone_var.get()
+        room = self.room_var.get()
+
+        <span class="code-keyword">if</span> name <span class="code-keyword">and</span> phone:
+            self.guests.append({
+                <span class="code-string">"Name"</span>: name,
+                <span class="code-string">"Phone"</span>: phone,
+                <span class="code-string">"Room"</span>: room
+            })
+            messagebox.showinfo(<span class="code-string">"Success"</span>, <span class="code-string">"Guest Checked In"</span>)
+        <span class="code-keyword">else</span>:
+            messagebox.showwarning(<span class="code-string">"Error"</span>, <span class="code-string">"Fill all fields"</span>)
+
+
+root = tk.Tk()
+app = HotelManagement(root)
+root.mainloop()
+</pre>
+
+
+<hr>
+<h2 id="output">Output</h2>
+
+<p>
+The screenshot below shows the working output of the Hotel Management System GUI.
+</p>
+
+<div class="output-box">
+    <img src="output.png" alt="Hotel Management System Output">
+    <div class="output-caption">
+        Figure: Hotel Management System GUI showing guest input,
+        room selection, guest list display, and action buttons.
+    </div>
+</div>
+
+<ul>
+    <li>Guest details entered using input fields</li>
+    <li>Room type selected from dropdown</li>
+    <li>Check-In adds guest to list</li>
+    <li>Guest list shown in text area</li>
+    <li>Check-Out removes guest</li>
+</ul>
+
+<hr>
+
+<h2 id="download">Download & Project Report</h2>
+
+<a href="Hotel_Management_System.ipynb" download class="btn">
+⬇ Download Source Code
+</a>
+
+<br><br>
+
+<a href="#" onclick="window.print();" class="btn">
+📄 Create PDF Project Report
+</a>
+
+<p><i>Tip:</i> Print → Save as PDF</p>
+
+<p><a href="#top">⬆ Back to Top</a></p>
+
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h3>Project Info</h3>
+<ul>
+    <li>Language: Python</li>
+    <li>GUI: Tkinter</li>
+    <li>Level: Beginner</li>
+    <li>Type: Desktop App</li>
+</ul>
+
+<h3>Similar Projects</h3>
+<ul>
+    <li>Library Management System</li>
+    <li>Student Management System</li>
+    <li>Bank Management System</li>
+</ul>
+</div>
+
+</div>
+
+<footer>
+© Python Mini Project – Hotel Management System
+</footer>
+
+</body>
+</html>
